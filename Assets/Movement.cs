@@ -4,19 +4,57 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    public AnimationCurve movementCurve;
+
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    float speed = 10;
+    public float speed = 5;
+
+    bool moving = false;
+    float ongoingTime;
 
     // Update is called once per frame
     void Update()
     {
-        float speedMultiplier = speed * Time.deltaTime;
 
-        transform.Translate(Input.GetAxis("Horizontal") * speedMultiplier, Input.GetAxis("Vertical") * speedMultiplier,0);
+        float x = Input.GetAxis("Horizontal");
+        float y = Input.GetAxis("Vertical");
+
+        float curveMultiplier = 1;
+
+        //print("x: " + x + " y: " + y);
+
+        if(Mathf.Abs(x) > 0 || Mathf.Abs(y) > 0)
+        {
+            if (!moving)
+            {
+                moving = true;
+                ongoingTime = 0;
+            }
+            else
+            {
+                ongoingTime += Time.deltaTime;
+                curveMultiplier = movementCurve.Evaluate((ongoingTime % 6f)/3);
+                //print("curveMultiplier " + curveMultiplier);
+            }
+        } else
+        {
+            if (moving)
+            {
+                moving = false;
+            }
+        }
+
+        //print(moving);
+
+        float speedMultiplier = speed * Time.deltaTime * curveMultiplier;
+
+        //print(speedMultiplier);
+
+        transform.Translate(x * speedMultiplier, y * speedMultiplier,0);
     }
 }

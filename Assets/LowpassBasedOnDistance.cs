@@ -22,7 +22,7 @@ public class LowpassBasedOnDistance : MonoBehaviour
     void Update()
     {
         float distance = Vector2.Distance(transform.position, target.position);
-        print(distance);
+        //print(distance);
         mixer.SetFloat("Lowpass", lowpassCurve.Evaluate(distance));
     }
 }
