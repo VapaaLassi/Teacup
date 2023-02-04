@@ -30,6 +30,7 @@ AudioMixerGroupController:
   m_Effects:
   - {fileID: -7254121319191468478}
   - {fileID: 6171308889026789356}
+  - {fileID: 5122626611955946608}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
@@ -50,6 +51,8 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
+  - guid: e0061d1edc085a54c9a255d4836581a9
+    name: DistortionLevel
   - guid: b6b63b535bba6de42ad1df4c2a716a7b
     name: Lowpass
   m_AudioMixerGroupViews:
@@ -105,8 +108,8 @@ AudioMixerSnapshotController:
   m_FloatValues:
     b404d8307fae2ce4fa3f6c20bf84d0fe: 99
     2850b97108487be4a9afaf6771d4216f: 0.68
-    41329223dad5b874391d6e8395d43d34: 1.63
-    b6b63b535bba6de42ad1df4c2a716a7b: 5332
+    41329223dad5b874391d6e8395d43d34: 1
+    b6b63b535bba6de42ad1df4c2a716a7b: 22000
     6df810145ff361a459478035ad00e262: 0.64
     72e79a34a40485f42b54ba2c62b8fabe: 0
     21b36d546ea4e18498e5b9f18b036a7a: 0
@@ -117,6 +120,22 @@ AudioMixerSnapshotController:
     b98543cfa71f06a4c9aa3b3461b19793: -9.7
     cc3276ffd5462a54f953a6c3c8b101e5: 7952
   m_TransitionOverrides: {}
+--- !u!244 &5122626611955946608
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 4b7045ed058984e4489160b33e9260e7
+  m_EffectName: Distortion
+  m_MixLevel: 02c9ca1a3c7b6fe48a230cba0b9dbcdd
+  m_Parameters:
+  - m_ParameterName: Level
+    m_GUID: e0061d1edc085a54c9a255d4836581a9
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &6171308889026789356
 AudioMixerEffectController:
   m_ObjectHideFlags: 3

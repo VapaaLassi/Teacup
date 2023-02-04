@@ -7,15 +7,13 @@ using UnityEngine.Audio;
 public class LowpassBasedOnDistance : MonoBehaviour
 {
     public Transform target;
-    AudioSource source;
-    AudioMixer mixer;
+    public AudioMixer mixer;
     public AnimationCurve lowpassCurve;
+    public AnimationCurve distortionCurve;
 
     // Start is called before the first frame update
     void Start()
     {
-        source = GetComponent<AudioSource>();
-        mixer = source.outputAudioMixerGroup.audioMixer;
     }
 
     // Update is called once per frame
@@ -23,6 +21,7 @@ public class LowpassBasedOnDistance : MonoBehaviour
     {
         float distance = Vector2.Distance(transform.position, target.position);
         //print(distance);
-        mixer.SetFloat("Lowpass", lowpassCurve.Evaluate(distance));
+        //mixer.SetFloat("Lowpass", lowpassCurve.Evaluate(distance));
+        mixer.SetFloat("DistortionLevel", distortionCurve.Evaluate(distance));
     }
 }
