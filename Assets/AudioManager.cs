@@ -43,7 +43,6 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
-        print(layers[0].timeSamples);
     }
 
     private IEnumerator FadeOutLayerVolume(AudioSource audioSource)
