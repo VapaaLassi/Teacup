@@ -19,6 +19,10 @@ public class AudioManager : MonoBehaviour
         {
             for (int i = 0; i < layer - activeLayers; i++)
             {
+                if(i == 2)
+                {
+                    continue;
+                }
                 FadeOut(layers[i]);
                 if(i == 0)
                 {
@@ -28,12 +32,18 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    private void FadeOut(AudioSource audioSource)
+    public void FadeOut(AudioSource audioSource)
     {
         if(audioSource.volume > 0)
         {
             StartCoroutine(FadeOutLayerVolume(audioSource));
         }
+    }
+
+
+    private void Update()
+    {
+        print(layers[0].timeSamples);
     }
 
     private IEnumerator FadeOutLayerVolume(AudioSource audioSource)

@@ -9,6 +9,8 @@ public class RemoveSpatialBlendOnTrigger : MonoBehaviour
 
     public int layerNumber;
 
+    public bool piano;
+
     AudioManager manager;
 
     SpriteRenderer spriteRenderer;  
@@ -21,15 +23,15 @@ public class RemoveSpatialBlendOnTrigger : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         // If something goes wrong with playing the music later, it's because we parse the layer from the file name.
-
-        layerNumber = int.Parse(source.clip.name[0] + "");
-        if (layerNumber == 1)
-            layerNumber = 10;
-        layerNumber -= 2;
+        if (!piano)
+        {
+            layerNumber = int.Parse(source.clip.name[0] + "");
+            if (layerNumber == 1)
+                layerNumber = 10;
+            layerNumber -= 2;
+        }
 
         manager = FindObjectOfType<AudioManager>();
-
-        print(layerNumber);
     }
 
     // Update is called once per frame
@@ -41,7 +43,10 @@ public class RemoveSpatialBlendOnTrigger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         StartCoroutine(FadeOutSpatialBlend());
-        manager.ActivateLayer(layerNumber);
+        if(!piano)
+            manager.ActivateLayer(layerNumber);
+        else
+            FindObjectOfType<PianoSources>().ActivatePiano(layerNumber);
     }
 
     IEnumerator FadeOutSpatialBlend()
