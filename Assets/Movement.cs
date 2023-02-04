@@ -21,6 +21,8 @@ public class Movement : MonoBehaviour
     void Update()
     {
 
+
+
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
 
@@ -52,6 +54,11 @@ public class Movement : MonoBehaviour
         //print(moving);
 
         float speedMultiplier = speed * Time.deltaTime * curveMultiplier;
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            speedMultiplier *= 2;
+        }
 
         //print(speedMultiplier);
 
