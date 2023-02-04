@@ -47,7 +47,7 @@ public class Movement : MonoBehaviour
             else
             {
                 ongoingTime += Time.deltaTime;
-                curveMultiplier = movementCurve.Evaluate((ongoingTime % 6f)/3);
+                curveMultiplier = movementCurve.Evaluate((ongoingTime % 0.75f));
                 //print("curveMultiplier " + curveMultiplier);
             }
         } else
