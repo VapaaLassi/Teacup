@@ -79,10 +79,10 @@ public class Movement : MonoBehaviour
 
         float speedMultiplier = speed * Time.deltaTime * curveMultiplier;
 
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            speedMultiplier *= 2;
-        }
+        //if (Input.GetKey(KeyCode.LeftShift))
+        //{
+        //    speedMultiplier *= 2;
+        //}
 
         //print(speedMultiplier);
         animator.SetBool("Moving", moving);
@@ -156,5 +156,11 @@ public class Movement : MonoBehaviour
         rigidbody2D.velocity = Vector2.zero;
         introInProgress = false;
         animator.SetTrigger("Impact");
+    }
+
+    internal void TriggerSit()
+    {
+        introInProgress = true;
+        animator.SetTrigger("Ending");
     }
 }
