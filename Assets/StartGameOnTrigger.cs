@@ -29,6 +29,7 @@ public class StartGameOnTrigger : MonoBehaviour
     void StartGame()
     {
         colliders.SetActive(true);
+        FindObjectOfType<SetLayering>().UpdateForegrounds(10);
     }
 
     public void EnableDeadEnds()
