@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.WSA;
 
 public class PianoSources : MonoBehaviour
 {
@@ -48,16 +47,19 @@ public class PianoSources : MonoBehaviour
         //pianos[i].enabled = false;
     }
 
+    int activePiano = 4;
+
     public void ActivatePiano(int i)
     {
-        if (i - 2 >= 0)
-        {
-            DeactivatePiano(i - 2);
-        }
-        if (i - 1 >= 0)
-        {
-            DeactivatePiano(i - 1);
-        }
-        pianos[i].enabled = true;
+        activePiano = i;
+        //if (i - 2 >= 0)
+        //{
+        //    DeactivatePiano(i - 2);
+        //}
+        //if (i - 1 >= 0)
+        //{
+        //    DeactivatePiano(i - 1);
+        //}
+        //pianos[i].enabled = true;
     }
 }

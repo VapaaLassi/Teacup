@@ -28,5 +28,6 @@ public class FadeInMelody : MonoBehaviour
 
             m_AudioSource.volume += Time.deltaTime / 4;
         }
+        FindObjectOfType<StartGameOnTrigger>().EnableDeadEnds();
     }
 }

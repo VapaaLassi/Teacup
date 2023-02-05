@@ -31,7 +31,7 @@ public class LowpassBasedOnDistance : MonoBehaviour
     {
         float distance = Vector2.Distance(transform.position, target.position);
 
-        // Could also fade out the piano layer here if that exists.
+        // Needs to work through the piano system. TODODODODO
 
         melody.volume = melodyCurve.Evaluate(1 - distance / maxdistance) / 2;
         //print(distance);

@@ -31,6 +31,11 @@ public class StartGameOnTrigger : MonoBehaviour
         colliders.SetActive(true);
     }
 
+    public void EnableDeadEnds()
+    {
+        deadEnds.SetActive(true);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         collision.gameObject.GetComponent<Movement>().StartGame();
