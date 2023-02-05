@@ -11,7 +11,7 @@ public class SetLayering : MonoBehaviour
     void Start()
     {
         renderers = GetComponentsInChildren<SpriteRenderer>();
-        UpdateForegrounds(0);
+        UpdateForegrounds(2);
     }
 
     public void UpdateForegrounds(int value)
