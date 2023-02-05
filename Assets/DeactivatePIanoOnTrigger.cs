@@ -9,6 +9,13 @@ public class DeactivatePIanoOnTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        FindObjectOfType<PianoSources>().FadeOutPiano(index);
+        if(index == 5)
+        {
+            FindObjectOfType<PianoSources>().FadeOutMelody();
+        } else
+        {
+            FindObjectOfType<PianoSources>().FadeOutPiano(index);
+        }
+
     }
 }

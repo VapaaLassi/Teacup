@@ -351,7 +351,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: FallingDown
-  m_Speed: -1
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -4762414531771725921}
@@ -408,7 +408,7 @@ AnimatorStateMachine:
     m_Position: {x: 920, y: 140, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6292681664802281655}
-    m_Position: {x: 600, y: 170, z: 0}
+    m_Position: {x: 610, y: 140, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 808401394280175196}
     m_Position: {x: 530, y: 240, z: 0}

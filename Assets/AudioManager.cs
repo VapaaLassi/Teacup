@@ -9,6 +9,8 @@ public class AudioManager : MonoBehaviour
     public AudioSource baseLayer;
     public AudioSource layer2Extra;
 
+    public AudioSource melodyLayer;
+
     public AudioSource[] layers;
 
     private int activeLayers = 2;
@@ -17,18 +19,18 @@ public class AudioManager : MonoBehaviour
     {
         if(layer > activeLayers)
         {
-            for (int i = 0; i < layer - activeLayers; i++)
-            {
-                if(i == 2)
-                {
-                    continue;
-                }
-                FadeOut(layers[i]);
-                if(i == 0)
-                {
-                    FadeOut(layer2Extra);
-                }
-            }
+            //for (int i = 0; i < layer - activeLayers; i++)
+            //{
+            //    if(i == 2)
+            //    {
+            //        continue;
+            //    }
+            //    FadeOut(layers[i]);
+            //    if(i == 0)
+            //    {
+            //        FadeOut(layer2Extra);
+            //    }
+            //}
         }
     }
 
@@ -43,6 +45,10 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ResetAll();
+        }
     }
 
     private IEnumerator FadeOutLayerVolume(AudioSource audioSource)
@@ -76,5 +82,17 @@ public class AudioManager : MonoBehaviour
                 StartCoroutine(FadeInLayerVolume(layers[i]));
             }
         }
+    }
+
+    internal void ResetAll()
+    {
+        foreach (AudioSource item in layers)
+        {
+            item.time = 0;
+        }
+        melodyLayer.time = 0;
+        layer2Extra.time = 0;
+
+        FindObjectOfType <PianoSources> ().ResetAll();
     }
 }

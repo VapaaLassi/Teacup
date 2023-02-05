@@ -18,6 +18,9 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
 
     private bool introInProgress = true;
+
+    bool firstMove = false;
+
     void Start()
     {
     }
@@ -49,6 +52,12 @@ public class Movement : MonoBehaviour
             if (!moving)
             {
                 moving = true;
+                if (!firstMove)
+                {
+                    firstMove = true;
+                    FindObjectOfType<FadeInMelody>().FadeIn();
+                    FindObjectOfType<AudioManager>().ResetAll();
+                }
                 ongoingTime = 0;
             }
             else

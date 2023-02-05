@@ -45,8 +45,8 @@ public class RemoveSpatialBlendOnTrigger : MonoBehaviour
         StartCoroutine(FadeOutSpatialBlend());
         if(!piano)
             manager.ActivateLayer(layerNumber);
-        else
-            FindObjectOfType<PianoSources>().ActivatePiano(layerNumber);
+        //else
+        //    FindObjectOfType<PianoSources>().ActivatePiano(layerNumber);
     }
 
     IEnumerator FadeOutSpatialBlend()

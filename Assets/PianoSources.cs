@@ -10,6 +10,8 @@ public class PianoSources : MonoBehaviour
 
     private AudioManager manager;
 
+    public AudioSource melody;
+
 
     // Start is called before the first frame update
     void Start()
@@ -17,10 +19,23 @@ public class PianoSources : MonoBehaviour
         manager = FindObjectOfType<AudioManager>();
     }
 
+    public void ResetAll()
+    {
+        foreach (AudioSource item in pianos)
+        {
+            item.time = 0;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void FadeOutMelody()
+    {
+        manager.FadeOut(melody);
     }
 
     public void FadeOutPiano(int i)
@@ -30,14 +45,14 @@ public class PianoSources : MonoBehaviour
 
     private void DeactivatePiano(int i)
     {
-        pianos[i].enabled = false;
+        //pianos[i].enabled = false;
     }
 
     public void ActivatePiano(int i)
     {
-        if(i-2 >= 0)
+        if (i - 2 >= 0)
         {
-            DeactivatePiano(i-2);
+            DeactivatePiano(i - 2);
         }
         if (i - 1 >= 0)
         {

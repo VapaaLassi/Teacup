@@ -13,6 +13,7 @@ public class StartGameOnTrigger : MonoBehaviour
     public Vignette vignette;
 
     public GameObject colliders;
+    public GameObject deadEnds;
 
     private void Start()
     {
