@@ -16,6 +16,8 @@ public class Movement : MonoBehaviour
     private Direction currentDirection = Direction.Down;
 
     // Start is called before the first frame update
+
+    private bool introInProgress = true;
     void Start()
     {
     }
@@ -28,7 +30,12 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!introInProgress)
+            HandleMovement();
+    }
 
+    private void HandleMovement()
+    {
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
 
@@ -50,7 +57,8 @@ public class Movement : MonoBehaviour
                 curveMultiplier = movementCurve.Evaluate((ongoingTime % 0.75f));
                 //print("curveMultiplier " + curveMultiplier);
             }
-        } else
+        }
+        else
         {
             if (moving)
             {
@@ -70,7 +78,7 @@ public class Movement : MonoBehaviour
         //print(speedMultiplier);
         animator.SetBool("Moving", moving);
 
-        transform.Translate(x * speedMultiplier, y * speedMultiplier,0);
+        transform.Translate(x * speedMultiplier, y * speedMultiplier, 0);
     }
 
     private void SetAnimationState(float x, float y)
@@ -129,5 +137,15 @@ public class Movement : MonoBehaviour
             }
         }
         return;
+    }
+
+    internal void StartGame()
+    {
+        Rigidbody2D rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
+
+        rigidbody2D.gravityScale = 0;
+        rigidbody2D.velocity = Vector2.zero;
+        introInProgress = false;
+        animator.SetTrigger("Impact");
     }
 }
