@@ -13,8 +13,6 @@ public class TriggerGameEndOnTrigger : MonoBehaviour
 
         collision.gameObject.GetComponent<Movement>().TriggerSit();
 
-        collision.gameObject.GetComponentInChildren<Camera>().transform.parent = root.transform;
-
         collision.gameObject.SetActive(false);
 
         sittingAnimation.SetActive(true);

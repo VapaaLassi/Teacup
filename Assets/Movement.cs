@@ -87,7 +87,18 @@ public class Movement : MonoBehaviour
         //print(speedMultiplier);
         animator.SetBool("Moving", moving);
 
+        //rigidbody2D.MovePosition((Vector2)transform.position + new Vector2(x * speedMultiplier, y * speedMultiplier));
+
+        if (IsYMovementFrozen())
+        {
+            y = 0;
+        }
         transform.Translate(x * speedMultiplier, y * speedMultiplier, 0);
+    }
+
+    private bool IsYMovementFrozen()
+    {
+        return rigidbody2D.constraints.Equals(RigidbodyConstraints2D.FreezePositionY);
     }
 
     private void SetAnimationState(float x, float y)
@@ -106,7 +117,7 @@ public class Movement : MonoBehaviour
                 return;
             }
         }
-        else
+        else if(!IsYMovementFrozen())
         {
             if (y > 0)
             {
@@ -148,9 +159,11 @@ public class Movement : MonoBehaviour
         return;
     }
 
+    private Rigidbody2D rigidbody2D;
+
     internal void StartGame()
     {
-        Rigidbody2D rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
+        rigidbody2D = gameObject.GetComponent<Rigidbody2D>();
 
         rigidbody2D.gravityScale = 0;
         rigidbody2D.velocity = Vector2.zero;
@@ -162,5 +175,11 @@ public class Movement : MonoBehaviour
     {
         introInProgress = true;
         animator.SetTrigger("Ending");
+    }
+
+    internal void FixPlayerYAndMovement(float y)
+    {
+        transform.position = new Vector3(transform.position.x, y, transform.position.z);
+        rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionY;
     }
 }
