@@ -17,7 +17,7 @@ public class Movement : MonoBehaviour
 
     // Start is called before the first frame update
 
-    private bool introInProgress = true;
+    private bool blockMovement = true;
 
     bool firstMove = false;
 
@@ -33,7 +33,7 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!introInProgress)
+        if(!blockMovement)
             HandleMovement();
     }
 
@@ -167,14 +167,24 @@ public class Movement : MonoBehaviour
 
         rigidbody2D.gravityScale = 0;
         rigidbody2D.velocity = Vector2.zero;
-        introInProgress = false;
+        blockMovement = false;
         animator.SetTrigger("Impact");
     }
 
     internal void TriggerSit()
     {
-        introInProgress = true;
+        blockMovement = true;
         animator.SetTrigger("Ending");
+    }
+
+    public void BlockMovement()
+    {
+        blockMovement = true;
+    }
+
+    public void UnblockMovement()
+    {
+        blockMovement = false;
     }
 
     internal void FixPlayerYAndMovement(float y)
