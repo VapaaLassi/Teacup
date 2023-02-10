@@ -8,7 +8,10 @@ public class CopyPlayerSprites : MonoBehaviour
     private SpriteRenderer mySpriteRenderer;
 
     public Transform pivot;
+    public Transform fadePivot;
     public Transform player;
+
+    public float fadingStrength = 1;
 
     void Start()
     {
@@ -23,8 +26,17 @@ public class CopyPlayerSprites : MonoBehaviour
 
         Vector2 playerPositionInverted = pivot.position - (player.position - pivot.position);
 
-        transform.position = new Vector2(playerPositionInverted.x, player.position.y + 1.15f);
-        
+        Color fade = mySpriteRenderer.color;
+
+        fade.a = 1 - Vector2.Distance(transform.position, fadePivot.position) / fadingStrength;
+
+        mySpriteRenderer.color = fade;
+
+        float skew = 1 - Mathf.Abs(transform.position.y - pivot.position.y) / fadingStrength;
+
+        transform.position = new Vector2(playerPositionInverted.x + skew, player.position.y + 1.15f);
+
+
         //transform.position = pivot.position - (player.position - pivot.position);      
     }
 }
