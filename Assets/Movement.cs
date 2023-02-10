@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UIElements;
 using UnityEngine;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 public class Movement : MonoBehaviour
 {
@@ -21,8 +23,11 @@ public class Movement : MonoBehaviour
 
     bool firstMove = false;
 
+    private AudioSource audio;
+
     void Start()
     {
+        audio = GetComponent<AudioSource>();
     }
 
     public float speed = 5;
@@ -36,6 +41,8 @@ public class Movement : MonoBehaviour
         if(!blockMovement)
             HandleMovement();
     }
+
+    private int steps = 0;
 
     private void HandleMovement()
     {
@@ -64,6 +71,17 @@ public class Movement : MonoBehaviour
             {
                 ongoingTime += Time.deltaTime;
                 curveMultiplier = movementCurve.Evaluate((ongoingTime % 0.75f));
+
+
+                int frame = ParseFrameFromName(spriteRenderer.sprite.name);
+                //if (Mathf.FloorToInt(ongoingTime / 0.75f)  > steps)
+                if (IsStep(frame))
+                {
+                    steps++;
+                    audio.PlayOneShot(audio.clip);
+                }
+
+                lastframe = frame;
                 //print("curveMultiplier " + curveMultiplier);
             }
         }
@@ -72,6 +90,7 @@ public class Movement : MonoBehaviour
             if (moving)
             {
                 moving = false;
+                steps = 0;
             }
         }
 
@@ -94,6 +113,28 @@ public class Movement : MonoBehaviour
             y = 0;
         }
         transform.Translate(x * speedMultiplier, y * speedMultiplier, 0);
+    }
+
+    private int lastframe;
+
+    private bool IsStep(int frame)
+    {
+        if(frame > 5 && frame < 19 && frame % 3 == 0)
+        {
+            return frame != lastframe;
+        }
+        return false;
+    }
+
+    private int ParseFrameFromName(string name)
+    {
+        if(name.Length > 19)
+        {
+            return int.Parse(name.Substring(name.Length - 2));
+        } else
+        {
+            return int.Parse(name[name.Length - 1] + "");
+        }
     }
 
     private bool IsYMovementFrozen()
