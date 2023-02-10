@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor.UIElements;
 using UnityEngine;
 using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
+using Random = UnityEngine.Random;
 
 public class Movement : MonoBehaviour
 {
@@ -23,11 +24,17 @@ public class Movement : MonoBehaviour
 
     bool firstMove = false;
 
-    private AudioSource audio;
+    private AudioSource audioSource;
+    private AudioClip[] footsteps;
+    private AudioClip[] milksteps;
+
+
 
     void Start()
     {
-        audio = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
+        footsteps = Resources.LoadAll<AudioClip>("Sounds/RegularFootsteps");
+        milksteps = Resources.LoadAll<AudioClip>("Sounds/MilkFootsteps");
     }
 
     public float speed = 5;
@@ -78,7 +85,7 @@ public class Movement : MonoBehaviour
                 if (IsStep(frame))
                 {
                     steps++;
-                    audio.PlayOneShot(audio.clip);
+                    audioSource.PlayOneShot(FootstepAudio());
                 }
 
                 lastframe = frame;
@@ -113,6 +120,28 @@ public class Movement : MonoBehaviour
             y = 0;
         }
         transform.Translate(x * speedMultiplier, y * speedMultiplier, 0);
+    }
+
+    private bool inMilk;
+
+    private AudioClip FootstepAudio()
+    {
+        if (inMilk)
+        {
+            return milksteps[Random.Range(0, milksteps.Length)];
+        }
+
+        return footsteps[Random.Range(0, footsteps.Length)];
+    }
+
+    public void SetMilkStatus(bool status)
+    {
+        inMilk = status;
+    }
+
+    public void ToggleMilkStatus()
+    {
+        inMilk = !inMilk;
     }
 
     private int lastframe;
