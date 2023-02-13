@@ -5,12 +5,20 @@ using UnityEngine;
 public class PanCameraOnTrigger : MonoBehaviour
 {
     public Transform cameraLocation;
+    public float panSpeedOverride = 0;
+
+    public GameObject cameraObject;
+
+    private void Start()
+    {
+        cameraObject = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Camera>().transform.gameObject;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GameObject cameraObject = collision.gameObject.GetComponentInChildren<Camera>().transform.gameObject;
-        cameraObject.transform.parent = null;
+        if(cameraObject.transform.parent != null)
+            cameraObject.transform.parent = null;
 
-        cameraObject.GetComponent<PanToLocation>().PanTo(cameraLocation.position);
+        cameraObject.GetComponent<PlayerCameraPanManager>().PanTo(cameraLocation.position,panSpeedOverride);
     }
 }

@@ -294,13 +294,14 @@ public class Movement : MonoBehaviour
 
         playerVision.FadeBackVision();
 
+        myCollider.enabled = true;
+
         yield return new WaitForSeconds(2f);
 
         animator.SetTrigger("GetUp");
 
         yield return new WaitForSeconds(1f);
 
-        myCollider.enabled = true;
         UnblockMovement();
 
     }
