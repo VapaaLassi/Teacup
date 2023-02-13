@@ -30,9 +30,10 @@ public class CopyPlayerSprites : MonoBehaviour
 
         fade.a = 1 - Vector2.Distance(transform.position, fadePivot.position) / fadingStrength;
 
-        mySpriteRenderer.color = fade;
+        //mySpriteRenderer.color = fade;
 
-        float skew = 1 - Mathf.Abs(transform.position.y - pivot.position.y) / fadingStrength;
+        //float skew = 1 - Mathf.Abs(transform.position.y - pivot.position.y) / fadingStrength;
+        float skew = 0;
 
         transform.position = new Vector2(playerPositionInverted.x + skew, player.position.y + 1.15f);
 

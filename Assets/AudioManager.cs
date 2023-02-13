@@ -11,6 +11,9 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource melodyLayer;
 
+
+    public AudioSource endingMix;
+
     public AudioSource[] layers;
 
     private int activeLayers = 2;
@@ -75,13 +78,18 @@ public class AudioManager : MonoBehaviour
         {
             if(i == 0)
             {
-                StartCoroutine(FadeInLayerVolume(layers[0], 0.25f));
-                StartCoroutine(FadeInLayerVolume(layer2Extra, 0.25f));
+                StartCoroutine(FadeOutLayerVolume(layers[0]));
+                StartCoroutine(FadeOutLayerVolume(layer2Extra));
             } else
             {
-                StartCoroutine(FadeInLayerVolume(layers[i]));
+                StartCoroutine(FadeOutLayerVolume(layers[i]));
             }
         }
+
+        FindObjectOfType<PianoSources>().FadeOutCurrentPiano();
+        endingMix.timeSamples = layer2Extra.timeSamples;
+        endingMix.Play();
+        FadeInLayerVolume(endingMix);
     }
 
     internal void ResetAll()

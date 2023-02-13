@@ -44,6 +44,19 @@ public class PianoSources : MonoBehaviour
         manager.FadeOut(pianos[i]);
     }
 
+    private bool adjustVolume = true;
+
+    public void FadeOutCurrentPiano()
+    {
+        if (pianos[activePiano] != null)
+            manager.FadeOut(pianos[activePiano]);
+        else
+        {
+            FadeOutMelody();
+        }
+        adjustVolume = false;
+    }
+
     private void DeactivatePiano(int i)
     {
         //pianos[i].enabled = false;
@@ -53,9 +66,15 @@ public class PianoSources : MonoBehaviour
 
     public void ActivatePiano(int i)
     {
+        if(activePiano == 4)
+        {
+            FadeOutMelody();
+        } else
+        {
+            FadeOutPiano(activePiano);
+        }
         activePiano = i;
 
-        FadeOutMelody();
 
         //if (i - 2 >= 0)
         //{
@@ -70,6 +89,8 @@ public class PianoSources : MonoBehaviour
 
     internal void SetMelodyVolume(float v)
     {
+        if (!adjustVolume)
+            return;
         print("Setting piano melody to piano " + activePiano +  " and volume " + v);
         if(activePiano == 4)
         {
