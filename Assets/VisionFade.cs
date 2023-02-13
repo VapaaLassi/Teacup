@@ -7,6 +7,8 @@ public class VisionFade : MonoBehaviour
 {
     SpriteRenderer spriteRenderer;
 
+    public float timeDilation = 3f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +25,7 @@ public class VisionFade : MonoBehaviour
         while(spriteRenderer.color.a < 1)
         {
             Color fade = spriteRenderer.color;
-            fade.a = fade.a + Time.deltaTime / 4;
+            fade.a = fade.a + Time.deltaTime / timeDilation;
 
             spriteRenderer.color = fade;
 
@@ -41,7 +43,7 @@ public class VisionFade : MonoBehaviour
         while (spriteRenderer.color.a > 0)
         {
             Color fade = spriteRenderer.color;
-            fade.a = fade.a - Time.deltaTime / 2;
+            fade.a = fade.a - Time.deltaTime / (timeDilation);
 
             spriteRenderer.color = fade;
 

@@ -6,17 +6,16 @@ using UnityEngine;
 public class PanToLocation : MonoBehaviour
 {
 
-    private Vector2 target;
     public AnimationCurve panCurve;
 
+    public float timeDilation = 10f;
 
     public void PanTo(Vector2 target)
     {
-        this.target = target;
-        StartCoroutine(PanToCurve());
+        StartCoroutine(PanToCurve(target));
     }
 
-    private IEnumerator PanToCurve()
+    public IEnumerator PanToCurve(Vector2 target)
     {
         float time = 0;
 
@@ -26,7 +25,7 @@ public class PanToLocation : MonoBehaviour
         {
             Vector2 nextPosition = originalPosition + panCurve.Evaluate(time) * (target - originalPosition);
             transform.position = new Vector3(nextPosition.x,nextPosition.y,-10);
-            time += Time.deltaTime / 10;
+            time += Time.deltaTime / timeDilation;
             yield return null;
         }
     }

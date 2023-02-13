@@ -29,12 +29,19 @@ public class Movement : MonoBehaviour
     private AudioClip[] milksteps;
 
 
+    private Collider2D myCollider;
+    private PanToLocation pan;
+
+
+    public VisionFade playerVision;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         footsteps = Resources.LoadAll<AudioClip>("Sounds/RegularFootsteps");
         milksteps = Resources.LoadAll<AudioClip>("Sounds/MilkFootsteps");
+        myCollider = GetComponent<Collider2D>();
+        pan = GetComponent<PanToLocation>();
     }
 
     public float speed = 5;
@@ -247,9 +254,10 @@ public class Movement : MonoBehaviour
         animator.SetTrigger("Ending");
     }
 
-    public void BlockMovement()
+    public void DeadEnd()
     {
         blockMovement = true;
+        ReturnToLastCheckpoint();
     }
 
     public void UnblockMovement()
@@ -261,5 +269,39 @@ public class Movement : MonoBehaviour
     {
         transform.position = new Vector3(transform.position.x, y, transform.position.z);
         rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionY;
+    }
+
+    public Transform LastCheckpoint;
+
+    public void ReturnToLastCheckpoint()
+    {
+        StartCoroutine(MoveToLocation());
+    }
+
+
+    private IEnumerator MoveToLocation()
+    {
+        myCollider.enabled = false;
+
+        yield return new WaitForSeconds(2);
+
+        playerVision.FadeOutVision();
+
+        yield return new WaitForSeconds(3);
+
+
+        yield return pan.PanToCurve(LastCheckpoint.position);
+
+        playerVision.FadeBackVision();
+
+        yield return new WaitForSeconds(2f);
+
+        animator.SetTrigger("GetUp");
+
+        yield return new WaitForSeconds(1f);
+
+        myCollider.enabled = true;
+        UnblockMovement();
+
     }
 }
