@@ -7,7 +7,7 @@ public class VisionFade : MonoBehaviour
 {
     SpriteRenderer spriteRenderer;
 
-    public float timeDilation = 3f;
+    public float timeDilation = 2.5f;
 
     // Start is called before the first frame update
     void Start()

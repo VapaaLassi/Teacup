@@ -7,7 +7,7 @@ public class PanCameraOnTrigger : MonoBehaviour
     public Transform cameraLocation;
     public float panSpeedOverride = 0;
 
-    public GameObject cameraObject;
+    private GameObject cameraObject;
 
     private void Start()
     {

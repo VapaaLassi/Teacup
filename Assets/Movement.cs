@@ -35,6 +35,9 @@ public class Movement : MonoBehaviour
 
     public VisionFade playerVision;
 
+    private Transform LastCheckpoint;
+
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -271,11 +274,15 @@ public class Movement : MonoBehaviour
         rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionY;
     }
 
-    public Transform LastCheckpoint;
 
     public void ReturnToLastCheckpoint()
     {
         StartCoroutine(MoveToLocation());
+    }
+
+    public void SetCheckPoint(Transform checkPoint)
+    {
+        LastCheckpoint = checkPoint;
     }
 
 
@@ -287,7 +294,7 @@ public class Movement : MonoBehaviour
 
         playerVision.FadeOutVision();
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(4);
 
 
         yield return pan.PanToCurve(LastCheckpoint.position);

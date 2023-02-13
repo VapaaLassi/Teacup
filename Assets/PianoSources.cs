@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,7 @@ public class PianoSources : MonoBehaviour
     private AudioManager manager;
 
     public AudioSource melody;
+    public AudioSource chords;
 
 
     // Start is called before the first frame update
@@ -52,6 +54,9 @@ public class PianoSources : MonoBehaviour
     public void ActivatePiano(int i)
     {
         activePiano = i;
+
+        FadeOutMelody();
+
         //if (i - 2 >= 0)
         //{
         //    DeactivatePiano(i - 2);
@@ -61,5 +66,18 @@ public class PianoSources : MonoBehaviour
         //    DeactivatePiano(i - 1);
         //}
         //pianos[i].enabled = true;
+    }
+
+    internal void SetMelodyVolume(float v)
+    {
+        print("Setting piano melody to piano " + activePiano +  " and volume " + v);
+        if(activePiano == 4)
+        {
+            melody.volume = v;
+        } else
+        {
+            pianos[activePiano].volume = v;
+        }
+        chords.volume = v;
     }
 }

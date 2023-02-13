@@ -18,7 +18,7 @@ public class LowpassBasedOnDistance : MonoBehaviour
 
     private AudioSource mySource;
 
-    public AudioSource melody;
+    public PianoSources melody;
 
     private float maxdistance = 25f;
 
@@ -47,7 +47,7 @@ public class LowpassBasedOnDistance : MonoBehaviour
 
         PostProcessingEffects(distance);
 
-        melody.volume = melodyCurve.Evaluate(1 - distance / maxdistance) / 2;
+        melody.SetMelodyVolume(melodyCurve.Evaluate(1 - distance / maxdistance) / 2);
         //print(distance);
         //mixer.SetFloat("Lowpass", lowpassCurve.Evaluate(distance));
         mixer.SetFloat("DistortionLevel", distortionCurve.Evaluate(distance));
