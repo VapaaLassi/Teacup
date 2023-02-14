@@ -217,6 +217,17 @@ public class Movement : MonoBehaviour
 
     private void UpdateDirection(Direction direction, string trigger)
     {
+        if(direction != Direction.Left && spriteRenderer.flipX)
+        {
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("WalkLeft") || animator.GetCurrentAnimatorStateInfo(0).IsName("IdleLeft"))
+            {
+                spriteRenderer.flipX = true;
+            } else
+            {
+                spriteRenderer.flipX = false;
+            }
+        }
+
         if(direction == currentDirection && moving)
         {
             return;
@@ -228,10 +239,15 @@ public class Movement : MonoBehaviour
             spriteRenderer.flipX = true;
         } else
         {
-            if (animator.GetCurrentAnimatorStateInfo(0).IsName("WalkLeft") || animator.GetCurrentAnimatorStateInfo(0).IsName("IdleLeft"))
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("WalkRight") || animator.GetCurrentAnimatorStateInfo(0).IsName("IdleRight"))
+            {
+                spriteRenderer.flipX = false;
+            }
+            else if (animator.GetCurrentAnimatorStateInfo(0).IsName("WalkLeft") || animator.GetCurrentAnimatorStateInfo(0).IsName("IdleLeft"))
             {
 
-            } else
+            }
+            else
             {
                 spriteRenderer.flipX = false;
             }

@@ -63,5 +63,6 @@ public class StartGameOnTrigger : MonoBehaviour
             time += Time.deltaTime / 2;
             yield return null;
         }
+        GetComponent<Collider2D>().enabled = false;
     }
 }
