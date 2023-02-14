@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
-using UnityEngine.WSA;
 using Application = UnityEngine.Application;
 
 public class GameManager : MonoBehaviour
