@@ -91,7 +91,6 @@ public class PianoSources : MonoBehaviour
     {
         if (!adjustVolume)
             return;
-        print("Setting piano melody to piano " + activePiano +  " and volume " + v);
         if(activePiano == 4)
         {
             melody.volume = v;

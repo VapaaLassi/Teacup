@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class VisionFade : MonoBehaviour
 {
-    SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
 
     public float timeDilation = 2.5f;
 

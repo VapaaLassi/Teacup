@@ -15,6 +15,10 @@ public class StartGameOnTrigger : MonoBehaviour
     public GameObject colliders;
     public GameObject deadEnds;
 
+    private AudioSource fallSound;
+
+    public GameObject caveAmbience;
+
     private void Start()
     {
 
@@ -24,11 +28,15 @@ public class StartGameOnTrigger : MonoBehaviour
             this.vignette = vignette;
         }
 
+        
+        fallSound = GetComponent<AudioSource>();
     }
 
     void StartGame()
     {
         colliders.SetActive(true);
+        fallSound.Play();
+        caveAmbience.SetActive(true);
         FindObjectOfType<SetLayering>().UpdateForegrounds(10);
     }
 
