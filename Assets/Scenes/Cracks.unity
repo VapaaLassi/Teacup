@@ -1508,7 +1508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &288014096
 Transform:
   m_ObjectHideFlags: 0
@@ -2496,9 +2496,83 @@ Transform:
   - {fileID: 1218435518}
   - {fileID: 1726939355}
   - {fileID: 194569745}
+  - {fileID: 492811092}
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &492811091
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 492811092}
+  - component: {fileID: 492811093}
+  m_Layer: 0
+  m_Name: Hole Collider (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &492811092
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492811091}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 40.27, y: 48, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 492268429}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &492811093
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492811091}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -3.9597397, y: -2.0546713}
+  - {x: 2.767437, y: 1.0885885}
+  - {x: 5.9749107, y: 5.0728207}
+  - {x: 16.456337, y: 1.9927845}
+  - {x: 13.78672, y: -4.247635}
+  - {x: 7.681534, y: -1.2539921}
+  - {x: 5.0002594, y: -8.720375}
+  - {x: 13.33234, y: -14.427032}
+  - {x: 20.218536, y: -15.159302}
+  - {x: 21.218224, y: -21.024433}
+  - {x: 18.683746, y: -25.84192}
+  - {x: 15.794189, y: -24.941185}
+  - {x: 12.818893, y: -22.589905}
+  - {x: 9.849216, y: -18.821037}
+  - {x: 2.6360168, y: -14.608816}
+  - {x: -2.0443306, y: -12.27238}
+  - {x: -4.050499, y: -11.601773}
+  - {x: -6.4332237, y: -10.779722}
+  - {x: -11.026257, y: -10.678844}
+  - {x: -13.783096, y: -8.17901}
+  - {x: -12.0082855, y: -5.1136684}
+  - {x: -6.760456, y: -2.270105}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &503333584
 GameObject:
   m_ObjectHideFlags: 0
@@ -10642,7 +10716,7 @@ EdgeCollider2D:
   - {x: 4.014385, y: 8.211168}
   - {x: 5.702524, y: 0.92618084}
   - {x: 4.4788475, y: -5.4026413}
-  - {x: -0.7988701, y: -11.774626}
+  - {x: -1.4002476, y: -11.570769}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -11528,18 +11602,20 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -4.4116974, y: 10.29144}
-  - {x: -5.496665, y: 9.724847}
+  - {x: -6.4925003, y: 9.355081}
+  - {x: -6.745146, y: 9.204644}
   - {x: -7.813012, y: 10.112854}
   - {x: -5.657943, y: 14.972715}
   - {x: 2.0734215, y: 12.696655}
   - {x: 8.583459, y: 11.401457}
-  - {x: 13.725118, y: 8.62328}
-  - {x: 9.408315, y: 7.8583}
-  - {x: 2.745607, y: 7.7686462}
-  - {x: -1.2747488, y: 8.001487}
-  - {x: -3.786511, y: 9.273245}
-  - {x: -4.385256, y: 9.919609}
+  - {x: 17.47056, y: 11.172264}
+  - {x: 18.560751, y: 5.434826}
+  - {x: 15.962688, y: 4.3041077}
+  - {x: 7.8477125, y: 4.164876}
+  - {x: 1.6011653, y: 5.0115814}
+  - {x: -2.783331, y: 5.972705}
+  - {x: -5.6592336, y: 7.8687}
+  - {x: -6.622118, y: 9.243351}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -13779,7 +13855,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858996184}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.389999, y: 0.98000336, z: 1185.0455}
+  m_LocalPosition: {x: 20, y: 0.98000336, z: 1185.0455}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1027544646}
@@ -14404,7 +14480,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 11
+  m_SortingOrder: 12
   m_Sprite: {fileID: -7702378113793276454, guid: 944631e116e0f844a992ddb6779c8d31, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

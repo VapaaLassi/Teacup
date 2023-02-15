@@ -64,7 +64,7 @@ public class PlayerCameraPanManager : PanToLocation
             target = playerCameraReferencePosition.transform.position;
             float distancePercentage = 1f - Vector2.Distance(transform.position, target) / startingDistance;
 
-            float movementFactor = Mathf.Max(((1 - distancePercentage) * 1/50f), 1f/100f)* Time.deltaTime * 70f;
+            float movementFactor = Mathf.Max(((1 - distancePercentage) * 1/40f), 1f/80f)* Time.deltaTime * 200f;
 
             Vector2 nextPosition = transform.position + movementFactor * (target - transform.position);
             transform.position = new Vector3(nextPosition.x, nextPosition.y, -10);
