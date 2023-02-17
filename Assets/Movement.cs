@@ -298,18 +298,13 @@ public class Movement : MonoBehaviour
             }
         }
 
-        if(direction == currentDirection && moving)
-        {
-            return;
-        }
-        currentDirection = direction;
-        animator.SetTrigger(trigger);
         if (FacingLeft(direction))
         {
             spriteRenderer.flipX = true;
-        } else
+        }
+        else
         {
-            if (animator.GetCurrentAnimatorStateInfo(0).IsName("WalkRight") || animator.GetCurrentAnimatorStateInfo(0).IsName("IdleRight") 
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("WalkRight") || animator.GetCurrentAnimatorStateInfo(0).IsName("IdleRight")
                 || animator.GetCurrentAnimatorStateInfo(0).IsName("WalkUpRight") || animator.GetCurrentAnimatorStateInfo(0).IsName("WalkDownRight"))
             {
                 spriteRenderer.flipX = false;
@@ -324,6 +319,14 @@ public class Movement : MonoBehaviour
                 spriteRenderer.flipX = false;
             }
         }
+
+        if (direction == currentDirection && moving)
+        {
+            return;
+        }
+        currentDirection = direction;
+        animator.SetTrigger(trigger);
+
         return;
     }
 
