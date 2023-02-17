@@ -14,7 +14,7 @@ public class Movement : MonoBehaviour
 
     public SpriteRenderer spriteRenderer;
 
-    public enum Direction { Up, Down, Left, Right };
+    public enum Direction { Up, Down, Left, Right , UpRight, DownRight, DownLeft, UpLeft};
 
     private Direction currentDirection = Direction.Down;
 
@@ -167,6 +167,17 @@ public class Movement : MonoBehaviour
 
     private int ParseFrameFromName(string name)
     {
+        //print(name + " length is " + name.Length);
+
+        if(name.Length > 23)
+        {
+            return int.Parse(name.Substring(name.Length - 2));
+        }
+        else if (name.Length > 22)
+        {
+            return int.Parse(name[name.Length - 1] + "");
+        }
+
         if(name.Length > 19)
         {
             return int.Parse(name.Substring(name.Length - 2));
@@ -183,7 +194,7 @@ public class Movement : MonoBehaviour
 
     private void SetAnimationState(float x, float y)
     {
-        if (Math.Abs(x) > Mathf.Abs(y))
+        if (IsYMovementFrozen())
         {
             if (x > 0)
             {
@@ -197,16 +208,72 @@ public class Movement : MonoBehaviour
                 return;
             }
         }
-        else if(!IsYMovementFrozen())
+
+        if (Math.Abs(x) > Mathf.Abs(y))
+        {
+            if (x > 0)
+            {
+                if(y > 0.1)
+                {
+                    UpdateDirection(Direction.UpRight, "UpRight");
+                    return;
+                }
+                if(y < -0.1)
+                {
+                    UpdateDirection(Direction.DownRight, "DownRight");
+                    return;
+                }
+
+                UpdateDirection(Direction.Right, "Right");
+                return;
+            }
+            else if (x < 0)
+            {
+                if (y > 0.1)
+                {
+                    UpdateDirection(Direction.UpLeft, "UpLeft");
+                    return;
+                }
+                if (y < -0.1)
+                {
+                    UpdateDirection(Direction.DownLeft, "DownLeft");
+                    return;
+                }
+
+                UpdateDirection(Direction.Left, "Left");
+                return;
+            }
+        }
+        else
         {
             if (y > 0)
             {
+                if (x > 0.1)
+                {
+                    UpdateDirection(Direction.UpRight, "UpRight");
+                    return;
+                }
+                if (x < -0.1)
+                {
+                    UpdateDirection(Direction.UpLeft, "UpLeft");
+                    return;
+                }
                 UpdateDirection(Direction.Up, "Up");
 
                 return;
             }
             else if (y < 0)
             {
+                if (x > 0.1)
+                {
+                    UpdateDirection(Direction.DownRight, "DownRight");
+                    return;
+                }
+                if (x < -0.1)
+                {
+                    UpdateDirection(Direction.DownLeft, "DownLeft");
+                    return;
+                }
                 UpdateDirection(Direction.Down, "Down");
 
                 return;
@@ -217,9 +284,12 @@ public class Movement : MonoBehaviour
 
     private void UpdateDirection(Direction direction, string trigger)
     {
-        if(direction != Direction.Left && spriteRenderer.flipX)
+        print("Moving " + direction.ToString() + " flip status " + spriteRenderer.flipX);
+
+        if(FacingLeft(direction) && spriteRenderer.flipX)
         {
-            if (animator.GetCurrentAnimatorStateInfo(0).IsName("WalkLeft") || animator.GetCurrentAnimatorStateInfo(0).IsName("IdleLeft"))
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("WalkLeft") || animator.GetCurrentAnimatorStateInfo(0).IsName("IdleLeft")
+                || animator.GetCurrentAnimatorStateInfo(0).IsName("WalkUpLeft") || animator.GetCurrentAnimatorStateInfo(0).IsName("WalkDownLeft"))
             {
                 spriteRenderer.flipX = true;
             } else
@@ -234,16 +304,18 @@ public class Movement : MonoBehaviour
         }
         currentDirection = direction;
         animator.SetTrigger(trigger);
-        if (direction == Direction.Left)
+        if (FacingLeft(direction))
         {
             spriteRenderer.flipX = true;
         } else
         {
-            if (animator.GetCurrentAnimatorStateInfo(0).IsName("WalkRight") || animator.GetCurrentAnimatorStateInfo(0).IsName("IdleRight"))
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("WalkRight") || animator.GetCurrentAnimatorStateInfo(0).IsName("IdleRight") 
+                || animator.GetCurrentAnimatorStateInfo(0).IsName("WalkUpRight") || animator.GetCurrentAnimatorStateInfo(0).IsName("WalkDownRight"))
             {
                 spriteRenderer.flipX = false;
             }
-            else if (animator.GetCurrentAnimatorStateInfo(0).IsName("WalkLeft") || animator.GetCurrentAnimatorStateInfo(0).IsName("IdleLeft"))
+            else if (animator.GetCurrentAnimatorStateInfo(0).IsName("WalkLeft") || animator.GetCurrentAnimatorStateInfo(0).IsName("IdleLeft")
+                || animator.GetCurrentAnimatorStateInfo(0).IsName("WalkUpLeft") || animator.GetCurrentAnimatorStateInfo(0).IsName("WalkDownLeft"))
             {
 
             }
@@ -253,6 +325,11 @@ public class Movement : MonoBehaviour
             }
         }
         return;
+    }
+
+    private bool FacingLeft(Direction direction)
+    {
+        return direction == Direction.Left || direction == Direction.UpLeft || direction == Direction.DownLeft;
     }
 
     private Rigidbody2D rigidbody2D;

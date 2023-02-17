@@ -1,0 +1,528 @@
+fileFormatVersion: 2
+guid: 2887b3084530e824cb237bbecdcd2aea
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4860735080018087219
+    second: hahmoDiagonals_98x248_0
+  - first:
+      213: -8017143318855349195
+    second: hahmoDiagonals_98x248_1
+  - first:
+      213: -4843165038530458728
+    second: hahmoDiagonals_98x248_2
+  - first:
+      213: -5110884584159226589
+    second: hahmoDiagonals_98x248_3
+  - first:
+      213: -7394969187576047991
+    second: hahmoDiagonals_98x248_4
+  - first:
+      213: 5966513683971101907
+    second: hahmoDiagonals_98x248_5
+  - first:
+      213: -5263145937124623225
+    second: hahmoDiagonals_98x248_6
+  - first:
+      213: -7545751493129481568
+    second: hahmoDiagonals_98x248_7
+  - first:
+      213: 6392492500567700620
+    second: hahmoDiagonals_98x248_8
+  - first:
+      213: -6157995690211054962
+    second: hahmoDiagonals_98x248_9
+  - first:
+      213: -9112630633001379029
+    second: hahmoDiagonals_98x248_10
+  - first:
+      213: 7974045776269821526
+    second: hahmoDiagonals_98x248_11
+  - first:
+      213: 2965207089581519939
+    second: hahmoDiagonals_98x248_12
+  - first:
+      213: -3999477625846865666
+    second: hahmoDiagonals_98x248_13
+  - first:
+      213: 2276936259422308892
+    second: hahmoDiagonals_98x248_14
+  - first:
+      213: 6356409806395179112
+    second: hahmoDiagonals_98x248_15
+  - first:
+      213: 4640301560327881068
+    second: hahmoDiagonals_98x248_16
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: hahmoDiagonals_98x248_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 264
+        width: 98
+        height: 248
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33d02cf4dccc47340800000000000000
+      internalID: 4860735080018087219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hahmoDiagonals_98x248_1
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 264
+        width: 98
+        height: 248
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53c0b3ec0a26db090800000000000000
+      internalID: -8017143318855349195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hahmoDiagonals_98x248_2
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 264
+        width: 98
+        height: 248
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89b0dc1ce0f99ccb0800000000000000
+      internalID: -4843165038530458728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hahmoDiagonals_98x248_3
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 264
+        width: 98
+        height: 248
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3255b21ac8d7219b0800000000000000
+      internalID: -5110884584159226589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hahmoDiagonals_98x248_4
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 264
+        width: 98
+        height: 248
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 986129144bacf5990800000000000000
+      internalID: -7394969187576047991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hahmoDiagonals_98x248_5
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 264
+        width: 98
+        height: 248
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d4da9865905dc250800000000000000
+      internalID: 5966513683971101907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hahmoDiagonals_98x248_6
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 264
+        width: 98
+        height: 248
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78c75a0d7ac85f6b0800000000000000
+      internalID: -5263145937124623225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hahmoDiagonals_98x248_7
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 264
+        width: 98
+        height: 248
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a2d4a00ffa184790800000000000000
+      internalID: -7545751493129481568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hahmoDiagonals_98x248_8
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 264
+        width: 98
+        height: 248
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c84bfa57f02b6b850800000000000000
+      internalID: 6392492500567700620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hahmoDiagonals_98x248_9
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 264
+        width: 98
+        height: 248
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8a6594db876a8aa0800000000000000
+      internalID: -6157995690211054962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hahmoDiagonals_98x248_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 98
+        height: 248
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2b1c9658be698180800000000000000
+      internalID: -9112630633001379029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hahmoDiagonals_98x248_11
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 16
+        width: 98
+        height: 248
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 656444d926089ae60800000000000000
+      internalID: 7974045776269821526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hahmoDiagonals_98x248_12
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 16
+        width: 98
+        height: 248
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 344f9fb3328862920800000000000000
+      internalID: 2965207089581519939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hahmoDiagonals_98x248_13
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 16
+        width: 98
+        height: 248
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef066481a400f78c0800000000000000
+      internalID: -3999477625846865666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hahmoDiagonals_98x248_14
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 16
+        width: 98
+        height: 248
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1ac217d67d499f10800000000000000
+      internalID: 2276936259422308892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hahmoDiagonals_98x248_15
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 16
+        width: 98
+        height: 248
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8608efc8a01863850800000000000000
+      internalID: 6356409806395179112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hahmoDiagonals_98x248_16
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 16
+        width: 98
+        height: 248
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c61c80a0fa9a56040800000000000000
+      internalID: 4640301560327881068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
