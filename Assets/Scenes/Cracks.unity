@@ -2612,7 +2612,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &492268429
 Transform:
   m_ObjectHideFlags: 0
@@ -3958,8 +3958,8 @@ EdgeCollider2D:
   - {x: 59.61958, y: -10.208984}
   - {x: 66.45536, y: -2.4449253}
   - {x: 90.13194, y: -5.2007656}
-  - {x: 91.81606, y: -5.951069}
-  - {x: 94.840515, y: -14.908569}
+  - {x: 91.225044, y: -6.132923}
+  - {x: 94.11311, y: -14.908569}
   - {x: 104.140205, y: -14.490063}
   - {x: 106.713394, y: -13.798573}
   - {x: 112.04874, y: -5.0709267}
@@ -11709,7 +11709,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 11
+  m_SortingOrder: 12
   m_Sprite: {fileID: 21300000, guid: 542f99e547823174f969f9e2c3aa7637, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -15193,7 +15193,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 4}
+  m_Size: {x: 1, y: 5}
   m_EdgeRadius: 0
 --- !u!114 &2037497586
 MonoBehaviour:

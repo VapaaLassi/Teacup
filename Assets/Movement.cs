@@ -343,8 +343,8 @@ public class Movement : MonoBehaviour
 
         rigidbody2D.gravityScale = 0;
         rigidbody2D.velocity = Vector2.zero;
-        blockMovement = false;
         animator.SetTrigger("Impact");
+        StartCoroutine(EnableMovementOnDelay());
     }
 
     internal void TriggerSit()
@@ -355,12 +355,26 @@ public class Movement : MonoBehaviour
 
     public void DeadEnd()
     {
+        StartCoroutine(DeadEndAnimation());
+    }
+
+    private IEnumerator DeadEndAnimation()
+    {
+        animator.SetBool("Moving", false);
         blockMovement = true;
+        yield return new WaitForSeconds(2f);
+        animator.SetTrigger("Overwhelm");
         ReturnToLastCheckpoint();
     }
 
     public void UnblockMovement()
     {
+        blockMovement = false;
+    }
+
+    private IEnumerator EnableMovementOnDelay()
+    {
+        yield return new WaitForSeconds(2.5f);
         blockMovement = false;
     }
 
@@ -393,7 +407,7 @@ public class Movement : MonoBehaviour
         yield return new WaitForSeconds(4);
 
 
-        yield return pan.PanToCurve(LastCheckpoint.position);
+        yield return pan.PanToCurve(LastCheckpoint.position,1.5f);
 
         playerVision.FadeBackVision();
 
@@ -403,7 +417,7 @@ public class Movement : MonoBehaviour
 
         animator.SetTrigger("GetUp");
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
 
         UnblockMovement();
 
