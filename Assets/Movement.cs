@@ -192,6 +192,8 @@ public class Movement : MonoBehaviour
         return rigidbody2D.constraints.Equals(RigidbodyConstraints2D.FreezePositionY);
     }
 
+    float directionSensitivity = 0.05f;
+
     private void SetAnimationState(float x, float y)
     {
         if (IsYMovementFrozen())
@@ -213,12 +215,12 @@ public class Movement : MonoBehaviour
         {
             if (x > 0)
             {
-                if(y > 0.1)
+                if(y > directionSensitivity)
                 {
                     UpdateDirection(Direction.UpRight, "UpRight");
                     return;
                 }
-                if(y < -0.1)
+                if(y < -directionSensitivity)
                 {
                     UpdateDirection(Direction.DownRight, "DownRight");
                     return;
@@ -229,12 +231,12 @@ public class Movement : MonoBehaviour
             }
             else if (x < 0)
             {
-                if (y > 0.1)
+                if (y > directionSensitivity)
                 {
                     UpdateDirection(Direction.UpLeft, "UpLeft");
                     return;
                 }
-                if (y < -0.1)
+                if (y < -directionSensitivity)
                 {
                     UpdateDirection(Direction.DownLeft, "DownLeft");
                     return;
@@ -248,12 +250,12 @@ public class Movement : MonoBehaviour
         {
             if (y > 0)
             {
-                if (x > 0.1)
+                if (x > directionSensitivity)
                 {
                     UpdateDirection(Direction.UpRight, "UpRight");
                     return;
                 }
-                if (x < -0.1)
+                if (x < -directionSensitivity)
                 {
                     UpdateDirection(Direction.UpLeft, "UpLeft");
                     return;
@@ -264,12 +266,12 @@ public class Movement : MonoBehaviour
             }
             else if (y < 0)
             {
-                if (x > 0.1)
+                if (x > directionSensitivity)
                 {
                     UpdateDirection(Direction.DownRight, "DownRight");
                     return;
                 }
-                if (x < -0.1)
+                if (x < -directionSensitivity)
                 {
                     UpdateDirection(Direction.DownLeft, "DownLeft");
                     return;
@@ -284,7 +286,7 @@ public class Movement : MonoBehaviour
 
     private void UpdateDirection(Direction direction, string trigger)
     {
-        print("Moving " + direction.ToString() + " flip status " + spriteRenderer.flipX);
+        //print("Moving " + direction.ToString() + " flip status " + spriteRenderer.flipX);
 
         if(FacingLeft(direction) && spriteRenderer.flipX)
         {

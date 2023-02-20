@@ -35,7 +35,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: EyeOpen
-  m_Speed: 1
+  m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -3968602116446751496}
@@ -48,7 +48,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: aef4c54eaae921046a067d07d1038e47, type: 2}
+  m_Motion: {fileID: 7400000, guid: c5aa4133277f3fd4faa6dd6edbae041e, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -122,7 +122,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: af01797648cda6948928dea3dab32884, type: 2}
+  m_Motion: {fileID: 7400000, guid: 52c41d7c0e2ed8745a53d89196e3bd56, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -190,7 +190,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: "silm\xE4_sprite_0"
+  m_Name: EyeMaskAnimator
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Blink
@@ -198,7 +198,7 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -255,7 +255,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: af01797648cda6948928dea3dab32884, type: 2}
+  m_Motion: {fileID: 7400000, guid: 52c41d7c0e2ed8745a53d89196e3bd56, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
