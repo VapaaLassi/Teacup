@@ -192,7 +192,7 @@ public class Movement : MonoBehaviour
         return rigidbody2D.constraints.Equals(RigidbodyConstraints2D.FreezePositionY);
     }
 
-    float directionSensitivity = 0.05f;
+    float directionSensitivity = 0.15f;
 
     private void SetAnimationState(float x, float y)
     {
@@ -382,7 +382,7 @@ public class Movement : MonoBehaviour
 
     internal void FixPlayerYAndMovement(float y)
     {
-        transform.position = new Vector3(transform.position.x, y, transform.position.z);
+        //transform.position = new Vector3(transform.position.x, y, transform.position.z);
         rigidbody2D.constraints = RigidbodyConstraints2D.FreezePositionY;
     }
 
