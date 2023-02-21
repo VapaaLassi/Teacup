@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,17 +22,19 @@ public class TriggerGameEndOnTrigger : MonoBehaviour
 
         sittingAnimation.SetActive(true);
 
-        gameEnding = true;
         gameEndingMusic.loop = false;
+
+        StartCoroutine(TransitionToCredits());
     }
 
-    private bool gameEnding = false;
-
-    private void Update()
+    private IEnumerator TransitionToCredits()
     {
-        if (gameEnding && !gameEndingMusic.isPlaying)
-        {
-            credits.SetActive(true);
-        }
+        yield return new WaitForSeconds(5f);
+        FindObjectOfType<AudioManager>().FadeOut(gameEndingMusic);
+        yield return new WaitForSeconds(4f);
+        FindObjectOfType<PlayerCameraPanManager>().PanTo(credits.transform.position, 12f);
+        yield return new WaitForSeconds(1f);
+        credits.SetActive(true);
     }
+
 }
