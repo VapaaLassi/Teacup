@@ -1094,7 +1094,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   status: 0
-  pushPlayer: {fileID: 1486674754}
 --- !u!61 &194569747
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5567,7 +5566,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   status: 0
-  pushPlayer: {fileID: 0}
 --- !u!61 &805626987
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10681,7 +10679,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   status: 1
-  pushPlayer: {fileID: 0}
 --- !u!61 &1218435520
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11180,7 +11177,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   status: 1
-  pushPlayer: {fileID: 0}
 --- !u!61 &1258947789
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13397,7 +13393,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1486674753
 Transform:
   m_ObjectHideFlags: 0
@@ -13928,7 +13924,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   status: 0
-  pushPlayer: {fileID: 0}
 --- !u!61 &1589099033
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14588,7 +14583,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   status: 0
-  pushPlayer: {fileID: 1486674754}
 --- !u!61 &1726939357
 BoxCollider2D:
   m_ObjectHideFlags: 0
