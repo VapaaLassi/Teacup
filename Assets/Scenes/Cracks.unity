@@ -17379,7 +17379,7 @@ MonoBehaviour:
   animator: {fileID: 2103194804}
   spriteRenderer: {fileID: 2103194805}
   playerVision: {fileID: 468461166}
-  speed: 4
+  speed: 3
 --- !u!70 &2083456526
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
