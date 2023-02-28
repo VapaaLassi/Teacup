@@ -8,7 +8,7 @@ public class TriggerGameEndOnTrigger : MonoBehaviour
     public GameObject sittingAnimation;
     public GameObject root;
 
-    public AudioSource gameEndingMusic;
+    public AudioManager gameEndingMusic;
 
     public GameObject credits;
 
@@ -22,7 +22,7 @@ public class TriggerGameEndOnTrigger : MonoBehaviour
 
         sittingAnimation.SetActive(true);
 
-        gameEndingMusic.loop = false;
+        gameEndingMusic.UnLoopTheEnd();
 
         StartCoroutine(TransitionToCredits());
     }
@@ -30,7 +30,7 @@ public class TriggerGameEndOnTrigger : MonoBehaviour
     private IEnumerator TransitionToCredits()
     {
         yield return new WaitForSeconds(5f);
-        FindObjectOfType<AudioManager>().FadeOut(gameEndingMusic);
+        gameEndingMusic.SwapEndingMusic();
         yield return new WaitForSeconds(4f);
         FindObjectOfType<PlayerCameraPanManager>().PanTo(credits.transform.position, 12f);
         yield return new WaitForSeconds(1f);

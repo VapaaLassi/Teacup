@@ -6,25 +6,36 @@ using UnityEngine.SceneManagement;
 public class ReloadSceneAtTheEndOfSong : MonoBehaviour
 {
     private AudioSource creditsSong;
+    public AudioManager manager;
 
+
+    public float timer = 0;
     // Start is called before the first frame update
     void Start()
     {
         creditsSong = GetComponent<AudioSource>();
-        if (!creditsSong.isPlaying)
-        {
-            creditsSong.Play();
-        }
+        
     }
 
-    bool waitingForSong = true;
+    bool waitingForCreditsSongtoEnd = false;
 
     // Update is called once per frame
     void Update()
     {
-        if (!creditsSong.isPlaying && waitingForSong)
+        timer += Time.deltaTime;
+
+        if (!waitingForCreditsSongtoEnd && !manager.endingMix.isPlaying)
         {
-            waitingForSong = false;
+            if (!creditsSong.isPlaying && timer < 10)
+            {
+                creditsSong.Play();
+            }
+            waitingForCreditsSongtoEnd = true;
+        }
+
+        if (!creditsSong.isPlaying && waitingForCreditsSongtoEnd)
+        {
+            waitingForCreditsSongtoEnd = false;
             SceneManager.LoadScene("Cracks");
         }   
     }

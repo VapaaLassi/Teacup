@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour
 
 
     public AudioSource endingMix;
+    public AudioSource softerEndingMix;
 
     public AudioSource[] layers;
 
@@ -54,6 +55,19 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void SwapEndingMusic()
+    {
+        FadeOut(endingMix);
+        StartCoroutine(FadeInLayerVolume(softerEndingMix));
+        print("FadingIn softer mix");
+    }
+
+    public void UnLoopTheEnd()
+    {
+        endingMix.loop = false;
+        softerEndingMix.loop = false;
+    }
+
     private IEnumerator FadeOutLayerVolume(AudioSource audioSource)
     {
         while(audioSource.volume > 0)
@@ -88,7 +102,9 @@ public class AudioManager : MonoBehaviour
 
         FindObjectOfType<PianoSources>().FadeOutCurrentPiano();
         endingMix.timeSamples = layer2Extra.timeSamples;
+        softerEndingMix.timeSamples = layer2Extra.timeSamples;
         endingMix.Play();
+        softerEndingMix.Play();
         FadeInLayerVolume(endingMix);
     }
 
