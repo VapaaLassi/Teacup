@@ -8,6 +8,8 @@ public class ReloadSceneAtTheEndOfSong : MonoBehaviour
     private AudioSource creditsSong;
     public AudioManager manager;
 
+    public GameObject itchbadge;
+    public FadeInOrOutOverTime[] fadeOutBackgroundAndCredits;
 
     public float timer = 0;
     // Start is called before the first frame update
@@ -26,9 +28,14 @@ public class ReloadSceneAtTheEndOfSong : MonoBehaviour
 
         if (!waitingForCreditsSongtoEnd && !manager.endingMix.isPlaying)
         {
-            if (!creditsSong.isPlaying && timer < 10)
+            if (!creditsSong.isPlaying)
             {
                 creditsSong.Play();
+                itchbadge.SetActive(true);
+                foreach (FadeInOrOutOverTime item in fadeOutBackgroundAndCredits)
+                {
+                    item.Run();
+                }
             }
             waitingForCreditsSongtoEnd = true;
         }

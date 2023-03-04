@@ -11,17 +11,17 @@ public class GameManager : MonoBehaviour
     public Rigidbody2D playerRB;
     public AudioSource teacupBreak;
 
-    public GameObject basicTitle;
-    public GameObject animatedTitle;
+    //public GameObject basicTitle;
+    //public GameObject animatedTitle;
 
     public VisionFade playerFade;
 
     public SpriteRenderer titleBackground;
-    public SpriteRenderer animatedTitleSprite;
-    public SpriteRenderer anykey;
-    public SpriteRenderer headphones;
-    public SpriteRenderer arrows;
-    public SpriteRenderer wasd;
+    //public SpriteRenderer animatedTitleSprite;
+    //public SpriteRenderer anykey;
+    //public SpriteRenderer headphones;
+    //public SpriteRenderer arrows;
+    //public SpriteRenderer wasd;
     public SpriteRenderer teacup;
 
 
@@ -51,8 +51,8 @@ public class GameManager : MonoBehaviour
         inTitle = false;
         teacupBreak.Play();
 
-        basicTitle.SetActive(false);
-        animatedTitle.SetActive(true);
+        //basicTitle.SetActive(false);
+        //animatedTitle.SetActive(true);
 
         StartCoroutine(TimedGameStart());
 
@@ -72,12 +72,12 @@ public class GameManager : MonoBehaviour
             postProcessing.weight = 0.5f + time / 4f;
             Color fade = new Color(titleBackground.color.r, titleBackground.color.g, titleBackground.color.b, playerFade.spriteRenderer.color.a); 
             titleBackground.color = fade;
-            animatedTitleSprite.color = fade;
+            //animatedTitleSprite.color = fade;
             Color keyfade = new Color(titleBackground.color.r, titleBackground.color.g, titleBackground.color.b, 1 - time);
-            anykey.color = keyfade;
-            arrows.color = keyfade;
-            wasd.color = keyfade;
-            headphones.color = keyfade;
+            //anykey.color = keyfade;
+            //arrows.color = keyfade;
+            //wasd.color = keyfade;
+            //headphones.color = keyfade;
             teacup.color = keyfade;
         }
         playerRB.simulated = true;
@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
             postProcessing.weight = 0.5f + time / 4f;
             Color fade = new Color(titleBackground.color.r, titleBackground.color.g, titleBackground.color.b, playerFade.spriteRenderer.color.a);
             titleBackground.color = fade;
-            animatedTitleSprite.color = fade;
+            //animatedTitleSprite.color = fade;
         }
 
 
